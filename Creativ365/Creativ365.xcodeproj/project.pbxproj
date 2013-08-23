@@ -47,7 +47,7 @@
 		64213C3A17C725AE00ACB862 /* AuthenticationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationManager.m; sourceTree = "<group>"; };
 		64213C3C17C72F9C00ACB862 /* PostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManager.h; sourceTree = "<group>"; };
 		64213C3D17C72F9C00ACB862 /* PostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManager.m; sourceTree = "<group>"; };
-		64213C3F17C73E8700ACB862 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		64213C3F17C73E8700ACB862 /* SecretConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretConstants.h; sourceTree = "<group>"; };
 		B42F1FC850914D93B7A0BDEF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -109,7 +109,7 @@
 				64213C3A17C725AE00ACB862 /* AuthenticationManager.m */,
 				64213C3C17C72F9C00ACB862 /* PostManager.h */,
 				64213C3D17C72F9C00ACB862 /* PostManager.m */,
-				64213C3F17C73E8700ACB862 /* Constants.h */,
+				64213C3F17C73E8700ACB862 /* SecretConstants.h */,
 			);
 			path = Creativ365;
 			sourceTree = "<group>";

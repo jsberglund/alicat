@@ -8,7 +8,7 @@
 
 #import "AuthenticationManager.h"
 #import "TMAPIClient.h"
-#import "Constants.h"
+#import "SecretConstants.h"
 
 @interface AuthenticationManager()
 @property (nonatomic, strong) NSString *storedOAuthToken;
