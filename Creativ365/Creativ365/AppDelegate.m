@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TMAPIClient.h"
 
 @implementation AppDelegate
 
@@ -14,6 +15,10 @@
 {
     // Override point for customization after application launch.
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [[TMAPIClient sharedInstance] handleOpenURL:url];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

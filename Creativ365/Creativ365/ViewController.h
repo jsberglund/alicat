@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *authenticateButton;
 
+- (IBAction)authenticateButtonTapped:(UIButton *)sender;
+- (IBAction)getPostsButtonTapped:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @end

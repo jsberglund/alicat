@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F55DF6D3D9340A1BB991D73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 524A7CB0FB624FDA90827F07 /* libPods.a */; };
 		64213C1417C71BF100ACB862 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1317C71BF100ACB862 /* UIKit.framework */; };
 		64213C1617C71BF100ACB862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1517C71BF100ACB862 /* Foundation.framework */; };
 		64213C1817C71BF100ACB862 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1717C71BF100ACB862 /* CoreGraphics.framework */; };
@@ -19,9 +20,12 @@
 		64213C2D17C71BF100ACB862 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64213C2B17C71BF100ACB862 /* MainStoryboard_iPhone.storyboard */; };
 		64213C3017C71BF100ACB862 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64213C2E17C71BF100ACB862 /* MainStoryboard_iPad.storyboard */; };
 		64213C3317C71BF100ACB862 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3217C71BF100ACB862 /* ViewController.m */; };
+		64213C3B17C725AE00ACB862 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3A17C725AE00ACB862 /* AuthenticationManager.m */; };
+		64213C3E17C72F9C00ACB862 /* PostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3D17C72F9C00ACB862 /* PostManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		524A7CB0FB624FDA90827F07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		64213C1017C71BF100ACB862 /* Creativ365.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Creativ365.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64213C1317C71BF100ACB862 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64213C1517C71BF100ACB862 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -39,6 +43,12 @@
 		64213C2F17C71BF100ACB862 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		64213C3117C71BF100ACB862 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		64213C3217C71BF100ACB862 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		64213C3917C725AE00ACB862 /* AuthenticationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationManager.h; sourceTree = "<group>"; };
+		64213C3A17C725AE00ACB862 /* AuthenticationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationManager.m; sourceTree = "<group>"; };
+		64213C3C17C72F9C00ACB862 /* PostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManager.h; sourceTree = "<group>"; };
+		64213C3D17C72F9C00ACB862 /* PostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManager.m; sourceTree = "<group>"; };
+		64213C3F17C73E8700ACB862 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		B42F1FC850914D93B7A0BDEF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,7 @@
 				64213C1417C71BF100ACB862 /* UIKit.framework in Frameworks */,
 				64213C1617C71BF100ACB862 /* Foundation.framework in Frameworks */,
 				64213C1817C71BF100ACB862 /* CoreGraphics.framework in Frameworks */,
+				3F55DF6D3D9340A1BB991D73 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +72,7 @@
 				64213C1917C71BF100ACB862 /* Creativ365 */,
 				64213C1217C71BF100ACB862 /* Frameworks */,
 				64213C1117C71BF100ACB862 /* Products */,
+				B42F1FC850914D93B7A0BDEF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +90,7 @@
 				64213C1317C71BF100ACB862 /* UIKit.framework */,
 				64213C1517C71BF100ACB862 /* Foundation.framework */,
 				64213C1717C71BF100ACB862 /* CoreGraphics.framework */,
+				524A7CB0FB624FDA90827F07 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,6 +105,11 @@
 				64213C3117C71BF100ACB862 /* ViewController.h */,
 				64213C3217C71BF100ACB862 /* ViewController.m */,
 				64213C1A17C71BF100ACB862 /* Supporting Files */,
+				64213C3917C725AE00ACB862 /* AuthenticationManager.h */,
+				64213C3A17C725AE00ACB862 /* AuthenticationManager.m */,
+				64213C3C17C72F9C00ACB862 /* PostManager.h */,
+				64213C3D17C72F9C00ACB862 /* PostManager.m */,
+				64213C3F17C73E8700ACB862 /* Constants.h */,
 			);
 			path = Creativ365;
 			sourceTree = "<group>";
@@ -117,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64213C3617C71BF100ACB862 /* Build configuration list for PBXNativeTarget "Creativ365" */;
 			buildPhases = (
+				18E24175DDE2468AB0AD9228 /* Check Pods Manifest.lock */,
 				64213C0C17C71BF100ACB862 /* Sources */,
 				64213C0D17C71BF100ACB862 /* Frameworks */,
 				64213C0E17C71BF100ACB862 /* Resources */,
+				B03594599DE44BBC91B9B580 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +192,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18E24175DDE2468AB0AD9228 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B03594599DE44BBC91B9B580 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		64213C0C17C71BF100ACB862 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -180,6 +233,8 @@
 				64213C2017C71BF100ACB862 /* main.m in Sources */,
 				64213C2417C71BF100ACB862 /* AppDelegate.m in Sources */,
 				64213C3317C71BF100ACB862 /* ViewController.m in Sources */,
+				64213C3B17C725AE00ACB862 /* AuthenticationManager.m in Sources */,
+				64213C3E17C72F9C00ACB862 /* PostManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +328,7 @@
 		};
 		64213C3717C71BF100ACB862 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B42F1FC850914D93B7A0BDEF /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Creativ365/Creativ365-Prefix.pch";
@@ -284,6 +340,7 @@
 		};
 		64213C3817C71BF100ACB862 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B42F1FC850914D93B7A0BDEF /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Creativ365/Creativ365-Prefix.pch";
@@ -312,6 +369,7 @@
 				64213C3817C71BF100ACB862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

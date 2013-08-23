@@ -1,0 +1,4 @@
+xcodeproj 'Creativ365/Creativ365.xcodeproj'
+platform :ios, '6.0'
+
+pod 'TMTumblrSDK'
