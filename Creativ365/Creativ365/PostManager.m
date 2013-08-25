@@ -11,14 +11,14 @@
 #import "TMTumblrAppClient.h"
 
 @implementation PostManager
-- (NSArray *)getPostsByMonth:(NSString *)monthString
+- (NSArray *)getPhotoPostsByMonth:(NSString *)monthString
 {
 //    [TMAPIClient sharedInstance] posts:@"creativ365.tumblr.com" type:@"photo" parameters:@{} callback:^(NSError *error){
 //        NSLog(@"call back success");
 //        //self.statusLabel.text = @"User is authenticated!";
 //    }];
     
-    [[TMAPIClient sharedInstance] posts:@"creativ365.tumblr.com" type:@"photo" parameters:@{@"tag" : @"creativ365august2013"} callback:^(id erk, NSError *error) {
+    [[TMAPIClient sharedInstance] posts:@"creativ365.tumblr.com" type:@"photo" parameters:@{@"tag" : @"creativ365august2013"} callback:^(NSData *erk, NSError *error) {
         NSLog(@"coooooollllll");
     } ];
     

@@ -10,4 +10,5 @@
 
 @interface AuthenticationManager : NSObject
 - (void)AuthenticateUserWithCompletion:(void (^)(BOOL success))onComplete;
+- (void)logOutUser;
 @end

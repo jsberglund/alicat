@@ -22,6 +22,16 @@
 		64213C3317C71BF100ACB862 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3217C71BF100ACB862 /* ViewController.m */; };
 		64213C3B17C725AE00ACB862 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3A17C725AE00ACB862 /* AuthenticationManager.m */; };
 		64213C3E17C72F9C00ACB862 /* PostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3D17C72F9C00ACB862 /* PostManager.m */; };
+		64AF41CD17C80E7200B856FB /* PhotoPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41CC17C80E7200B856FB /* PhotoPost.m */; };
+		64AF41D717C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
+		64AF41D817C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
+		64C09A5917C7DB0E00D8377C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C09A5817C7DB0E00D8377C /* SenTestingKit.framework */; };
+		64C09A5A17C7DB0E00D8377C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1717C71BF100ACB862 /* CoreGraphics.framework */; };
+		64C09A5B17C7DB0E00D8377C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1317C71BF100ACB862 /* UIKit.framework */; };
+		64C09A5C17C7DB0E00D8377C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1517C71BF100ACB862 /* Foundation.framework */; };
+		64C09A6217C7DB0E00D8377C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64C09A6017C7DB0E00D8377C /* InfoPlist.strings */; };
+		64C09A6417C7DB0E00D8377C /* ExampleSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64C09A6317C7DB0E00D8377C /* ExampleSpec.mm */; };
+		64C09A6717C7DB0F00D8377C /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C09A6617C7DB0F00D8377C /* Cedar-iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +58,19 @@
 		64213C3C17C72F9C00ACB862 /* PostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManager.h; sourceTree = "<group>"; };
 		64213C3D17C72F9C00ACB862 /* PostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManager.m; sourceTree = "<group>"; };
 		64213C3F17C73E8700ACB862 /* SecretConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretConstants.h; sourceTree = "<group>"; };
+		64AF41CB17C80E7200B856FB /* PhotoPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoPost.h; path = Model/PhotoPost.h; sourceTree = "<group>"; };
+		64AF41CC17C80E7200B856FB /* PhotoPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoPost.m; path = Model/PhotoPost.m; sourceTree = "<group>"; };
+		64AF41CF17C812C500B856FB /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
+		64AF41D517C813D300B856FB /* ResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseParser.h; sourceTree = "<group>"; };
+		64AF41D617C813D300B856FB /* ResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseParser.m; sourceTree = "<group>"; };
+		64C09A5717C7DB0E00D8377C /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64C09A5817C7DB0E00D8377C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		64C09A5F17C7DB0E00D8377C /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
+		64C09A6117C7DB0E00D8377C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		64C09A6317C7DB0E00D8377C /* ExampleSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ExampleSpec.mm; sourceTree = "<group>"; };
+		64C09A6517C7DB0E00D8377C /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
+		64C09A6617C7DB0F00D8377C /* Cedar-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cedar-iOS.framework"; path = "Frameworks/Cedar-iOS.framework"; sourceTree = "<group>"; };
+		64C09A6817C7DB0F00D8377C /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
 		B42F1FC850914D93B7A0BDEF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -63,6 +86,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		64C09A5317C7DB0E00D8377C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64C09A5917C7DB0E00D8377C /* SenTestingKit.framework in Frameworks */,
+				64C09A5A17C7DB0E00D8377C /* CoreGraphics.framework in Frameworks */,
+				64C09A5B17C7DB0E00D8377C /* UIKit.framework in Frameworks */,
+				64C09A5C17C7DB0E00D8377C /* Foundation.framework in Frameworks */,
+				64C09A6717C7DB0F00D8377C /* Cedar-iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -70,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				64213C1917C71BF100ACB862 /* Creativ365 */,
+				64C09A5D17C7DB0E00D8377C /* Specs */,
 				64213C1217C71BF100ACB862 /* Frameworks */,
 				64213C1117C71BF100ACB862 /* Products */,
 				B42F1FC850914D93B7A0BDEF /* Pods.xcconfig */,
@@ -80,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				64213C1017C71BF100ACB862 /* Creativ365.app */,
+				64C09A5717C7DB0E00D8377C /* Specs.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +128,7 @@
 				64213C1517C71BF100ACB862 /* Foundation.framework */,
 				64213C1717C71BF100ACB862 /* CoreGraphics.framework */,
 				524A7CB0FB624FDA90827F07 /* libPods.a */,
+				64C09A5817C7DB0E00D8377C /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,6 +136,8 @@
 		64213C1917C71BF100ACB862 /* Creativ365 */ = {
 			isa = PBXGroup;
 			children = (
+				64AF41D417C8139F00B856FB /* Parsers */,
+				64AF41D317C8139000B856FB /* Utils */,
 				64213C2217C71BF100ACB862 /* AppDelegate.h */,
 				64213C2317C71BF100ACB862 /* AppDelegate.m */,
 				64213C2B17C71BF100ACB862 /* MainStoryboard_iPhone.storyboard */,
@@ -109,7 +149,7 @@
 				64213C3A17C725AE00ACB862 /* AuthenticationManager.m */,
 				64213C3C17C72F9C00ACB862 /* PostManager.h */,
 				64213C3D17C72F9C00ACB862 /* PostManager.m */,
-				64213C3F17C73E8700ACB862 /* SecretConstants.h */,
+				64AF41CE17C80E7600B856FB /* Model */,
 			);
 			path = Creativ365;
 			sourceTree = "<group>";
@@ -124,6 +164,54 @@
 				64213C2517C71BF100ACB862 /* Default.png */,
 				64213C2717C71BF100ACB862 /* Default@2x.png */,
 				64213C2917C71BF100ACB862 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64AF41CE17C80E7600B856FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64AF41CB17C80E7200B856FB /* PhotoPost.h */,
+				64AF41CC17C80E7200B856FB /* PhotoPost.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		64AF41D317C8139000B856FB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				64213C3F17C73E8700ACB862 /* SecretConstants.h */,
+				64AF41CF17C812C500B856FB /* AppConstants.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		64AF41D417C8139F00B856FB /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				64AF41D517C813D300B856FB /* ResponseParser.h */,
+				64AF41D617C813D300B856FB /* ResponseParser.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		64C09A5D17C7DB0E00D8377C /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				64C09A6317C7DB0E00D8377C /* ExampleSpec.mm */,
+				64C09A6517C7DB0E00D8377C /* Rakefile */,
+				64C09A6617C7DB0F00D8377C /* Cedar-iOS.framework */,
+				64C09A5E17C7DB0E00D8377C /* Supporting Files */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		64C09A5E17C7DB0E00D8377C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64C09A5F17C7DB0E00D8377C /* Specs-Info.plist */,
+				64C09A6017C7DB0E00D8377C /* InfoPlist.strings */,
+				64C09A6817C7DB0F00D8377C /* Specs-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,6 +238,24 @@
 			productReference = 64213C1017C71BF100ACB862 /* Creativ365.app */;
 			productType = "com.apple.product-type.application";
 		};
+		64C09A5617C7DB0E00D8377C /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64C09A6B17C7DB0F00D8377C /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				64C09A5217C7DB0E00D8377C /* Sources */,
+				64C09A5317C7DB0E00D8377C /* Frameworks */,
+				64C09A5417C7DB0E00D8377C /* Resources */,
+				64C09A5517C7DB0E00D8377C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = 64C09A5717C7DB0E00D8377C /* Specs.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,6 +278,7 @@
 			projectRoot = "";
 			targets = (
 				64213C0F17C71BF100ACB862 /* Creativ365 */,
+				64C09A5617C7DB0E00D8377C /* Specs */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +294,14 @@
 				64213C2A17C71BF100ACB862 /* Default-568h@2x.png in Resources */,
 				64213C2D17C71BF100ACB862 /* MainStoryboard_iPhone.storyboard in Resources */,
 				64213C3017C71BF100ACB862 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64C09A5417C7DB0E00D8377C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64C09A6217C7DB0E00D8377C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +322,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		64C09A5517C7DB0E00D8377C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 		B03594599DE44BBC91B9B580 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -235,6 +363,17 @@
 				64213C3317C71BF100ACB862 /* ViewController.m in Sources */,
 				64213C3B17C725AE00ACB862 /* AuthenticationManager.m in Sources */,
 				64213C3E17C72F9C00ACB862 /* PostManager.m in Sources */,
+				64AF41CD17C80E7200B856FB /* PhotoPost.m in Sources */,
+				64AF41D717C813D300B856FB /* ResponseParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64C09A5217C7DB0E00D8377C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64C09A6417C7DB0E00D8377C /* ExampleSpec.mm in Sources */,
+				64AF41D817C813D300B856FB /* ResponseParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +402,14 @@
 				64213C2F17C71BF100ACB862 /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		64C09A6017C7DB0E00D8377C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64C09A6117C7DB0E00D8377C /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -350,6 +497,54 @@
 			};
 			name = Release;
 		};
+		64C09A6917C7DB0F00D8377C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Creativ365.app/Creativ365";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/Specs/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		64C09A6A17C7DB0F00D8377C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Creativ365.app/Creativ365";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/Specs/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -367,6 +562,15 @@
 			buildConfigurations = (
 				64213C3717C71BF100ACB862 /* Debug */,
 				64213C3817C71BF100ACB862 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64C09A6B17C7DB0F00D8377C /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64C09A6917C7DB0F00D8377C /* Debug */,
+				64C09A6A17C7DB0F00D8377C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

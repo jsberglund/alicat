@@ -21,7 +21,6 @@
 
 - (void)AuthenticateUserWithCompletion:(void (^)(BOOL success))onComplete
 {
-    //TODO BEFORE CHECKING IN: put in untracked property file
     [TMAPIClient sharedInstance].OAuthConsumerKey = kTumblrConsumerKey;
     [TMAPIClient sharedInstance].OAuthConsumerSecret = kTumblrConsumerSecret;
     
@@ -55,7 +54,14 @@
         onComplete(true);
     }
 }
-
-
+-(void)logOutUser
+{
+    //clear out secret values
+    [TMAPIClient sharedInstance].OAuthToken = @"";
+    [TMAPIClient sharedInstance].OAuthTokenSecret = @"";
+    
+    [[NSUserDefaults standardUserDefaults] setValue:[TMAPIClient sharedInstance].OAuthToken forKey:@"token"];
+    [[NSUserDefaults standardUserDefaults] setValue:[TMAPIClient sharedInstance].OAuthTokenSecret forKey:@"token_secret"];
+}
 
 @end

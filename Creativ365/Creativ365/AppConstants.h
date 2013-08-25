@@ -1,0 +1,2 @@
+
+#define kAppName @"creativ365"
