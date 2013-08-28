@@ -9,19 +9,69 @@
 #import "PostManager.h"
 #import "TMAPIClient.h"
 #import "TMTumblrAppClient.h"
+#import "AppConstants.h"
+#import "ResponseParser.h"
+
+@interface PostManager ()
+@property (strong, nonatomic) ResponseParser *tumblrParser;
+@end
 
 @implementation PostManager
-- (NSArray *)getPhotoPostsByMonth:(NSString *)monthString
+
+- (id)init
 {
-//    [TMAPIClient sharedInstance] posts:@"creativ365.tumblr.com" type:@"photo" parameters:@{} callback:^(NSError *error){
-//        NSLog(@"call back success");
-//        //self.statusLabel.text = @"User is authenticated!";
-//    }];
+    self = [super init];
+    if (self) {
+        self.tumblrParser = [[ResponseParser alloc] init];
+    }
+    return self;
+}
+- (void)getPostsByMonth:(NSString *)month
+                andYear:(NSString *)year
+             success:(void (^)(NSArray *posts))success
+                failure:(void (^)(NSError *error))failure
+{
     
-    [[TMAPIClient sharedInstance] posts:@"creativ365.tumblr.com" type:@"photo" parameters:@{@"tag" : @"creativ365august2013"} callback:^(NSData *erk, NSError *error) {
-        NSLog(@"coooooollllll");
-    } ];
+   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDictionary *params = @{@"tag" : [self getTagByMonth:month andYear:year], @"format" : @"text"};
+        
+       //TODO get user blog name after authenticating
+       [[TMAPIClient sharedInstance] posts:@"creativ365.tumblr.com" type:@"photo" parameters:params callback:^(NSData *postsData, NSError *error) {
+            
+            if (!error) {
+                NSLog(@"callback succeeded. Posts: %@", postsData);
+                
+                NSArray *postsArray = [self.tumblrParser parseIntoPostsWithJSONData:postsData];
+                
+                postsArray = [self sortByDateForPhotoPosts:postsArray];
+                
+                success(postsArray);
+            }
+            else
+            {
+                failure(error);
+            }
+            
+        } ];
+    });   
+}
+
+-(void)submitPost:(PhotoPost *)photoPost
+{
     
-    return nil;
+}
+
+-(NSArray *)sortByDateForPhotoPosts:(NSArray *)photoPostsArray
+{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];
+    NSArray *orderedArray = [photoPostsArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    return orderedArray;
+}
+
+- (NSString *)getTagByMonth:(NSString *)month
+                    andYear:(NSString *)year
+{
+    return [NSString stringWithFormat:@"%@%@%@", kAppName, month, year];
 }
 @end

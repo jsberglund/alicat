@@ -25,6 +25,8 @@
 		64AF41CD17C80E7200B856FB /* PhotoPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41CC17C80E7200B856FB /* PhotoPost.m */; };
 		64AF41D717C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
 		64AF41D817C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
+		64AF41DA17CABEE700B856FB /* PostManagerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D917CABEE700B856FB /* PostManagerSpec.mm */; };
+		64AF41DC17CAC2CF00B856FB /* ResponseParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41DB17CAC2CF00B856FB /* ResponseParserSpec.mm */; };
 		64C09A5917C7DB0E00D8377C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C09A5817C7DB0E00D8377C /* SenTestingKit.framework */; };
 		64C09A5A17C7DB0E00D8377C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1717C71BF100ACB862 /* CoreGraphics.framework */; };
 		64C09A5B17C7DB0E00D8377C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1317C71BF100ACB862 /* UIKit.framework */; };
@@ -63,6 +65,8 @@
 		64AF41CF17C812C500B856FB /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		64AF41D517C813D300B856FB /* ResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseParser.h; sourceTree = "<group>"; };
 		64AF41D617C813D300B856FB /* ResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseParser.m; sourceTree = "<group>"; };
+		64AF41D917CABEE700B856FB /* PostManagerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PostManagerSpec.mm; sourceTree = "<group>"; };
+		64AF41DB17CAC2CF00B856FB /* ResponseParserSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResponseParserSpec.mm; sourceTree = "<group>"; };
 		64C09A5717C7DB0E00D8377C /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C09A5817C7DB0E00D8377C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		64C09A5F17C7DB0E00D8377C /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				64C09A6517C7DB0E00D8377C /* Rakefile */,
 				64C09A6617C7DB0F00D8377C /* Cedar-iOS.framework */,
 				64C09A5E17C7DB0E00D8377C /* Supporting Files */,
+				64AF41D917CABEE700B856FB /* PostManagerSpec.mm */,
+				64AF41DB17CAC2CF00B856FB /* ResponseParserSpec.mm */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -374,6 +380,8 @@
 			files = (
 				64C09A6417C7DB0E00D8377C /* ExampleSpec.mm in Sources */,
 				64AF41D817C813D300B856FB /* ResponseParser.m in Sources */,
+				64AF41DA17CABEE700B856FB /* PostManagerSpec.mm in Sources */,
+				64AF41DC17CAC2CF00B856FB /* ResponseParserSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

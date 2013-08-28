@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PhotoPost.h"
 
 @interface PostManager : NSObject
-- (NSArray *)getPostsByMonth:(NSString *)monthString;
+- (void)getPostsByMonth:(NSString *)month
+                andYear:(NSString *)year
+                success:(void (^)(NSArray *posts))success
+                failure:(void (^)(NSError *error))failure;
+
+- (NSString *)getTagByMonth:(NSString *)month
+                    andYear:(NSString *)year;
+
+- (void)submitPost:(PhotoPost *)photoPost;
+
+-(NSArray *)sortByDateForPhotoPosts:(NSArray *)photoPostsArray;
 @end

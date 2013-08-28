@@ -21,9 +21,6 @@
 
 - (void)AuthenticateUserWithCompletion:(void (^)(BOOL success))onComplete
 {
-    [TMAPIClient sharedInstance].OAuthConsumerKey = kTumblrConsumerKey;
-    [TMAPIClient sharedInstance].OAuthConsumerSecret = kTumblrConsumerSecret;
-    
     _storedOAuthToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"token"];
     _storedOAuthTokenSecret = [[NSUserDefaults standardUserDefaults] valueForKey:@"token_secret"];
     

@@ -7,35 +7,60 @@
 //
 
 #import "ResponseParser.h"
+#import "PhotoPost.h"
 
 @implementation ResponseParser
 - (NSArray *)parseIntoPostsWithJSONData:(NSData *)jsonData
 {
     NSMutableArray *postsArray = [[NSMutableArray alloc] init]; 
-    NSError *error = nil;
-    
-    if (jsonData) {
+
+    if ([jsonData isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = (NSDictionary*)jsonData;
         
-        id jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+        NSArray *posts = [dict objectForKey:@"posts"];
         
-        if (error) {
-            NSLog(@"error is %@", [error localizedDescription]);
-            
-            // Handle Error and return
-            return nil;
-            
+        if (posts)
+        {
+            for (int i = 0; i < posts.count; i++) {
+                PhotoPost *photoPost = [[PhotoPost alloc] init];
+                
+                photoPost.title = [posts[i] objectForKey:@"caption"];
+                photoPost.postID = [posts[i] objectForKey:@"id"];
+                photoPost.postUrl = [posts[i] objectForKey:@"post_url"];
+                photoPost.postDate = [NSDate dateWithTimeIntervalSince1970:([[posts[i] objectForKey:@"timestamp"] longLongValue])];
+                
+                photoPost.timestamp = [posts[i] objectForKey:@"timestamp"];
+                
+                //if a post has multiple photos, we'll just take the first
+                NSArray *photos = [posts[i] objectForKey:@"photos"] ;
+               
+                if (photos.count > 0)
+                {
+                    NSDictionary *original_size = [photos[0] objectForKey:@"original_size"];
+                    photoPost.fullPhotoUrl = [original_size objectForKey:@"url"];
+                    
+                    NSArray *alt_sizes = [photos[0] objectForKey:@"alt_sizes"];
+                    for (int j = 0; j < alt_sizes.count; j++)
+                    {
+                        NSNumber *width = [alt_sizes[j] objectForKey:@"width"];
+                        if ([width isEqual: @250])
+                        {
+                            photoPost.thumbnailUrl = [alt_sizes[j] objectForKey:@"url"];
+                        }
+                        else if ([width isEqual: @75])
+                        {
+                            photoPost.iconUrl = [alt_sizes[j] objectForKey:@"url"];
+                            
+                        }
+                    }
+                }
+                
+                [postsArray addObject:photoPost];
+            }
         }
-        
-        NSArray *keys = [jsonObjects allKeys];
-        
-        // values in foreach loop
-        for (NSString *key in keys) {
-            NSLog(@"%@ is %@",key, [jsonObjects objectForKey:key]);
-        }
-        
-    } else {
-        return nil;
     }
+    
+    return postsArray;
 }
 
 @end

@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 #import "AuthenticationManager.h"
+#import "SecretConstants.h"
 #import "PostManager.h"
+#import "TMAPIClient.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) AuthenticationManager *authManager;
@@ -20,6 +22,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [TMAPIClient sharedInstance].OAuthConsumerKey = kTumblrConsumerKey;
+    [TMAPIClient sharedInstance].OAuthConsumerSecret = kTumblrConsumerSecret;
 	self.authManager = [[AuthenticationManager alloc] init];
     self.postManager = [[PostManager alloc] init];
 }
@@ -40,6 +45,11 @@
 
 - (IBAction)getPostsButtonTapped:(UIButton *)sender
 {
-    [self.postManager getPostsByMonth:@"august"];
+    [self.postManager getPostsByMonth:@"August" andYear:@"2013"
+                           success:^(NSArray *postsArray) {
+        NSLog(@"complete");
+    } failure:^(NSError *error) {
+        NSLog(@"failure");
+    }];
 }
 @end
