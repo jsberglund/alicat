@@ -12,12 +12,24 @@
 #import "PostManager.h"
 #import "TMAPIClient.h"
 
-@interface ViewController ()
+#import <UIKit/UIKit.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (strong, nonatomic) AuthenticationManager *authManager;
 @property (strong, nonatomic) PostManager *postManager;
+
+@property BOOL newMedia;
+
+@property (nonatomic) UIImagePickerController *imagePickerController;
+@property (nonatomic) NSMutableArray *capturedImages;
+@property (nonatomic) UIImage *selectedImage;
+
+
+
 @end
 
-@implementation ViewController
+@implementation ViewController 
 
 - (void)viewDidLoad
 {
@@ -27,6 +39,8 @@
     [TMAPIClient sharedInstance].OAuthConsumerSecret = kTumblrConsumerSecret;
 	self.authManager = [[AuthenticationManager alloc] init];
     self.postManager = [[PostManager alloc] init];
+    
+    self.capturedImages = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,4 +66,70 @@
         NSLog(@"failure");
     }];
 }
+
+#pragma mark - Photo Picker
+- (IBAction)getPhotoTapped:(id)sender
+{
+    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+
+- (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
+{
+    if (self.imageView.isAnimating)
+    {
+        [self.imageView stopAnimating];
+    }
+    
+    if (self.capturedImages.count > 0)
+    {
+        [self.capturedImages removeAllObjects];
+    }
+    
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    imagePickerController.sourceType = sourceType;
+    imagePickerController.delegate = self;
+    
+    self.imagePickerController = imagePickerController;
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+
+
+- (void)finishAndUpdate
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+    if ([self.capturedImages count] > 0)
+    {
+        if ([self.capturedImages count] == 1)
+        {
+            self.selectedImage = [self.capturedImages objectAtIndex:0];
+            [self.imageView setImage: self.selectedImage];
+        }
+
+        [self.capturedImages removeAllObjects];
+    }
+    
+    self.imagePickerController = nil;
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+// This method is called when an image has been chosen from the library or taken from the camera.
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    
+    [self.capturedImages addObject:image];
+    
+    [self finishAndUpdate];
+}
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 @end

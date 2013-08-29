@@ -10,8 +10,10 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *authenticateButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 - (IBAction)authenticateButtonTapped:(UIButton *)sender;
 - (IBAction)getPostsButtonTapped:(UIButton *)sender;
+- (IBAction)getPhotoTapped:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @end
