@@ -15,5 +15,6 @@
 - (IBAction)authenticateButtonTapped:(UIButton *)sender;
 - (IBAction)getPostsButtonTapped:(UIButton *)sender;
 - (IBAction)getPhotoTapped:(UIButton *)sender;
+- (IBAction)dummyPostButtonTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @end

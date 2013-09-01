@@ -9,15 +9,25 @@
 #import "AuthenticationManager.h"
 #import "TMAPIClient.h"
 #import "SecretConstants.h"
+#import "ResponseParser.h"
+
 
 @interface AuthenticationManager()
 @property (nonatomic, strong) NSString *storedOAuthToken;
 @property (nonatomic, strong) NSString *storedOAuthTokenSecret;
-
+@property (strong, nonatomic) ResponseParser *tumblrParser;
 @end
 
 @implementation AuthenticationManager
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.tumblrParser = [[ResponseParser alloc] init];
+    }
+    return self;
+}
 
 - (void)AuthenticateUserWithCompletion:(void (^)(BOOL success))onComplete
 {
@@ -36,9 +46,9 @@
                  [[NSUserDefaults standardUserDefaults] setValue:[TMAPIClient sharedInstance].OAuthTokenSecret forKey:@"token_secret"];
                  
                  onComplete(true);
-             }
-             else
+             } else {
                  onComplete(true);
+             }
          }];
     }
     else
@@ -51,6 +61,22 @@
         onComplete(true);
     }
 }
+
+- (void)getCurrentUserInfoWithSuccess:(void (^)(UserInfo *user))success andFailure:(void (^)(NSError *error))failure
+{
+    [[TMAPIClient sharedInstance] userInfo:^(id response, NSError *error) {
+        if (!error)
+        {
+            UserInfo *user = [self.tumblrParser parseIntoUserInfoWithJSONData:response];
+            
+            success(user);
+        } else {
+            failure(error);
+        }
+    }];
+}
+
+
 -(void)logOutUser
 {
     //clear out secret values

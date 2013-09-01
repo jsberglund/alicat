@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserInfo.h"
 
 @interface ResponseParser : NSObject
-- (NSArray *)parseIntoPostsWithJSONData:(NSData *)jsonData;
+- (NSArray *)parseIntoPostsWithJSONData:(NSDictionary *)jsonData;
+- (UserInfo *)parseIntoUserInfoWithJSONData:(NSDictionary *)jsonData;
 @end

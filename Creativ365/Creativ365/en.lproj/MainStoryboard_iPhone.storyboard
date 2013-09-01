@@ -66,9 +66,9 @@
                                     <action selector="getPhotoTapped:" destination="2" eventType="touchUpInside" id="uqm-V9-g4T"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQ8-VD-Xk0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQ8-VD-Xk0">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="yut-6k-qvP"/>
+                                    <constraint firstAttribute="height" constant="175" id="1kx-vm-8zi"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqg-3k-NiB">
@@ -80,15 +80,18 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="dummyPostButtonTapped:" destination="2" eventType="touchUpInside" id="RSJ-rZ-DEe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ygd-XI-L2P" firstAttribute="baseline" secondItem="nBD-lF-gxu" secondAttribute="baseline" type="default" id="2Ka-L8-4Bu"/>
                             <constraint firstItem="nBD-lF-gxu" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DJo-ks-7xM"/>
+                            <constraint firstItem="KOc-VR-WZR" firstAttribute="top" secondItem="3" secondAttribute="top" constant="207" id="F7C-Y1-c7L"/>
                             <constraint firstAttribute="trailing" secondItem="qQ8-VD-Xk0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FET-ka-GFY"/>
                             <constraint firstItem="qQ8-VD-Xk0" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Hqh-rE-0FX"/>
-                            <constraint firstItem="nBD-lF-gxu" firstAttribute="top" secondItem="KOc-VR-WZR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="K5A-Tu-96L"/>
                             <constraint firstItem="KOc-VR-WZR" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="14" id="KyZ-P3-vl7"/>
                             <constraint firstAttribute="trailing" secondItem="ygd-XI-L2P" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LTM-s4-QTD"/>
                             <constraint firstAttribute="bottom" secondItem="TIm-40-H6y" secondAttribute="bottom" constant="14" id="M4Z-A5-5kB"/>

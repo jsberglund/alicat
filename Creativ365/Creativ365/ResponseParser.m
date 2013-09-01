@@ -10,7 +10,7 @@
 #import "PhotoPost.h"
 
 @implementation ResponseParser
-- (NSArray *)parseIntoPostsWithJSONData:(NSData *)jsonData
+- (NSArray *)parseIntoPostsWithJSONData:(NSDictionary *)jsonData
 {
     NSMutableArray *postsArray = [[NSMutableArray alloc] init]; 
 
@@ -25,8 +25,8 @@
                 PhotoPost *photoPost = [[PhotoPost alloc] init];
                 
                 photoPost.title = [posts[i] objectForKey:@"caption"];
-                photoPost.postID = [posts[i] objectForKey:@"id"];
-                photoPost.postUrl = [posts[i] objectForKey:@"post_url"];
+                photoPost.postID = [[posts[i] objectForKey:@"id"] stringValue];
+                photoPost.postUrl = [NSURL URLWithString:[posts[i] objectForKey:@"post_url"]];
                 photoPost.postDate = [NSDate dateWithTimeIntervalSince1970:([[posts[i] objectForKey:@"timestamp"] longLongValue])];
                 
                 photoPost.timestamp = [posts[i] objectForKey:@"timestamp"];
@@ -37,7 +37,7 @@
                 if (photos.count > 0)
                 {
                     NSDictionary *original_size = [photos[0] objectForKey:@"original_size"];
-                    photoPost.fullPhotoUrl = [original_size objectForKey:@"url"];
+                    photoPost.fullPhotoUrl = [NSURL URLWithString:[original_size objectForKey:@"url"]];
                     
                     NSArray *alt_sizes = [photos[0] objectForKey:@"alt_sizes"];
                     for (int j = 0; j < alt_sizes.count; j++)
@@ -45,11 +45,11 @@
                         NSNumber *width = [alt_sizes[j] objectForKey:@"width"];
                         if ([width isEqual: @250])
                         {
-                            photoPost.thumbnailUrl = [alt_sizes[j] objectForKey:@"url"];
+                            photoPost.thumbnailUrl = [NSURL URLWithString:[alt_sizes[j] objectForKey:@"url"]];
                         }
                         else if ([width isEqual: @75])
                         {
-                            photoPost.iconUrl = [alt_sizes[j] objectForKey:@"url"];
+                            photoPost.iconUrl = [NSURL URLWithString:[alt_sizes[j] objectForKey:@"url"]];
                             
                         }
                     }
@@ -61,6 +61,40 @@
     }
     
     return postsArray;
+}
+
+- (UserInfo *)parseIntoUserInfoWithJSONData:(NSDictionary *)jsonData
+{
+    UserInfo *user = [[UserInfo alloc] init];
+    
+    if ([jsonData isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *userDict = [((NSDictionary*)jsonData) objectForKey:@"user"];
+        user.name = [userDict objectForKey:@"name"];
+        
+        NSMutableArray *blogsArray = [[NSMutableArray alloc] init];
+        NSArray *blogs = [userDict objectForKey:@"blogs"];
+        
+        if (blogs)
+        {
+            for (int i = 0; i < blogs.count; i++) {
+                Blog *blog = [[Blog alloc] init];
+                blog.name = [blogs[i] objectForKey:@"name"];
+                blog.title = [blogs[i] objectForKey:@"title"];
+                blog.url = [blogs[i] objectForKey:@"url"];
+                
+                [blogsArray addObject:blog];
+                
+                BOOL isPrimary = [[blogs[i] objectForKey:@"primary"] boolValue];
+                if (isPrimary) {
+                    user.primaryBlog = blog;
+                }
+            }
+            
+            user.blogs = blogsArray;
+        }
+    }
+    
+    return user;
 }
 
 @end

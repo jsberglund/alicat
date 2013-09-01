@@ -36,7 +36,7 @@
         NSDictionary *params = @{@"tag" : [self getTagByMonth:month andYear:year], @"format" : @"text"};
         
        //TODO get user blog name after authenticating
-       [[TMAPIClient sharedInstance] posts:@"creativ365.tumblr.com" type:@"photo" parameters:params callback:^(NSData *postsData, NSError *error) {
+       [[TMAPIClient sharedInstance] posts:@"creativ365.tumblr.com" type:@"photo" parameters:params callback:^(id postsData, NSError *error) {
             
             if (!error) {
                 NSLog(@"callback succeeded. Posts: %@", postsData);
@@ -56,9 +56,54 @@
     });   
 }
 
--(void)submitPost:(PhotoPost *)photoPost
+- (void)submitPost:(PhotoPost *)photoPost
+         withImage:(UIImage *)image
+           success:(void (^)(NSString *postID))success
+           failure:(void (^)(NSError *error))failure
+
 {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //save UIImage to temp dir
+        NSString *tempDir = NSTemporaryDirectory();
+        NSString *path = [tempDir stringByAppendingPathComponent:@"upload-image.jpg"];
+        NSData *imageData = UIImageJPEGRepresentation(image,1);
+        [imageData writeToFile:path atomically:YES];
+        
+        // Create file manager
+        NSFileManager *fileMgr = [NSFileManager defaultManager];
+        
+        [[TMAPIClient sharedInstance] photo:@"creativ365.tumblr.com"
+                              filePathArray:@[path]
+                           contentTypeArray:@[@"image/jpg"]
+                              fileNameArray:@[@"upload-image.jpg"]
+                                 parameters:@{@"caption" : photoPost.title}
+                                   callback:^(id response, NSError *postError) {
+                                       
+                                       //delete temp file
+                                       NSError* __autoreleasing error = NULL;
+                                       if ([fileMgr removeItemAtPath:path error:&error] != YES)
+                                           NSLog(@"Unable to delete temp file");
+                                       
+                                       if (postError)
+                                           NSLog(@"Error posting to Tumblr");
+                                       else
+                                           NSLog(@"Posted photo to Tumblr: %@", response);
+                                   }];
+        
+    });
     
+//    UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
+//    //you can use UIImagePickerControllerOriginalImage for the original image
+//    
+//    //Now, save the image to your apps temp folder,
+//    
+//    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"upload-image.tmp"];
+//    NSData *imageData = UIImagePNGRepresentation(img);
+//    //you can also use UIImageJPEGRepresentation(img,1); for jpegs
+//    [imageData writeToFile:path atomically:YES];
+//    
+//    //now call your method
+//    [someClass uploadMyImageToTheWebFromPath:path];
 }
 
 -(NSArray *)sortByDateForPhotoPosts:(NSArray *)photoPostsArray

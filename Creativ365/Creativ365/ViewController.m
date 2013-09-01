@@ -54,6 +54,12 @@
     [self.authManager AuthenticateUserWithCompletion:^(BOOL success){
         NSLog(@"call back success");
         self.statusLabel.text = @"User is authenticated!";
+        
+        [self.authManager getCurrentUserInfoWithSuccess:^(UserInfo *user) {
+            NSLog(@"Success user");
+        } andFailure:^(NSError *error) {
+             NSLog(@"fail user");
+        }];
     }];
 }
 
@@ -67,12 +73,29 @@
     }];
 }
 
+-(void)dummyPostButtonTapped:(id)sender
+{
+    if (self.selectedImage)
+    {
+        PhotoPost *post = [[PhotoPost alloc] init];
+        post.title = @"Test photo post";
+        
+        [self.postManager submitPost:post
+                           withImage:self.selectedImage
+                             success:^(NSString *postID) {
+            NSLog(@"complete");
+        }
+                             failure:^(NSError *error) {
+            NSLog(@"failure");
+        }];
+    }
+}
+
 #pragma mark - Photo Picker
 - (IBAction)getPhotoTapped:(id)sender
 {
     [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
 }
-
 
 - (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
 {

@@ -34,6 +34,12 @@
 		64C09A6217C7DB0E00D8377C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64C09A6017C7DB0E00D8377C /* InfoPlist.strings */; };
 		64C09A6417C7DB0E00D8377C /* ExampleSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64C09A6317C7DB0E00D8377C /* ExampleSpec.mm */; };
 		64C09A6717C7DB0F00D8377C /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C09A6617C7DB0F00D8377C /* Cedar-iOS.framework */; };
+		64F49CB817D28EB70034F404 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F49CB717D28EB70034F404 /* blue.png */; };
+		64F49CBB17D2F21F0034F404 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CBA17D2F21F0034F404 /* UserInfo.m */; };
+		64F49CBC17D2F21F0034F404 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CBA17D2F21F0034F404 /* UserInfo.m */; };
+		64F49CBF17D2F48E0034F404 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CBE17D2F48E0034F404 /* Blog.m */; };
+		64F49CC017D2F48E0034F404 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CBE17D2F48E0034F404 /* Blog.m */; };
+		64F49CC317D3BE3F0034F404 /* JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CC217D3BE3F0034F404 /* JSONFixture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +81,13 @@
 		64C09A6517C7DB0E00D8377C /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		64C09A6617C7DB0F00D8377C /* Cedar-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cedar-iOS.framework"; path = "Frameworks/Cedar-iOS.framework"; sourceTree = "<group>"; };
 		64C09A6817C7DB0F00D8377C /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
+		64F49CB717D28EB70034F404 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		64F49CB917D2F21F0034F404 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		64F49CBA17D2F21F0034F404 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		64F49CBD17D2F48E0034F404 /* Blog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blog.h; sourceTree = "<group>"; };
+		64F49CBE17D2F48E0034F404 /* Blog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blog.m; sourceTree = "<group>"; };
+		64F49CC117D3BE3F0034F404 /* JSONFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONFixture.h; sourceTree = "<group>"; };
+		64F49CC217D3BE3F0034F404 /* JSONFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONFixture.m; sourceTree = "<group>"; };
 		B42F1FC850914D93B7A0BDEF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -140,6 +153,7 @@
 		64213C1917C71BF100ACB862 /* Creativ365 */ = {
 			isa = PBXGroup;
 			children = (
+				64F49CB717D28EB70034F404 /* blue.png */,
 				64AF41D417C8139F00B856FB /* Parsers */,
 				64AF41D317C8139000B856FB /* Utils */,
 				64213C2217C71BF100ACB862 /* AppDelegate.h */,
@@ -177,6 +191,10 @@
 			children = (
 				64AF41CB17C80E7200B856FB /* PhotoPost.h */,
 				64AF41CC17C80E7200B856FB /* PhotoPost.m */,
+				64F49CB917D2F21F0034F404 /* UserInfo.h */,
+				64F49CBA17D2F21F0034F404 /* UserInfo.m */,
+				64F49CBD17D2F48E0034F404 /* Blog.h */,
+				64F49CBE17D2F48E0034F404 /* Blog.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -208,6 +226,8 @@
 				64C09A5E17C7DB0E00D8377C /* Supporting Files */,
 				64AF41D917CABEE700B856FB /* PostManagerSpec.mm */,
 				64AF41DB17CAC2CF00B856FB /* ResponseParserSpec.mm */,
+				64F49CC117D3BE3F0034F404 /* JSONFixture.h */,
+				64F49CC217D3BE3F0034F404 /* JSONFixture.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -300,6 +320,7 @@
 				64213C2A17C71BF100ACB862 /* Default-568h@2x.png in Resources */,
 				64213C2D17C71BF100ACB862 /* MainStoryboard_iPhone.storyboard in Resources */,
 				64213C3017C71BF100ACB862 /* MainStoryboard_iPad.storyboard in Resources */,
+				64F49CB817D28EB70034F404 /* blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +392,8 @@
 				64213C3E17C72F9C00ACB862 /* PostManager.m in Sources */,
 				64AF41CD17C80E7200B856FB /* PhotoPost.m in Sources */,
 				64AF41D717C813D300B856FB /* ResponseParser.m in Sources */,
+				64F49CBB17D2F21F0034F404 /* UserInfo.m in Sources */,
+				64F49CBF17D2F48E0034F404 /* Blog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +405,9 @@
 				64AF41D817C813D300B856FB /* ResponseParser.m in Sources */,
 				64AF41DA17CABEE700B856FB /* PostManagerSpec.mm in Sources */,
 				64AF41DC17CAC2CF00B856FB /* ResponseParserSpec.mm in Sources */,
+				64F49CBC17D2F21F0034F404 /* UserInfo.m in Sources */,
+				64F49CC017D2F48E0034F404 /* Blog.m in Sources */,
+				64F49CC317D3BE3F0034F404 /* JSONFixture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,10 @@
 - (NSString *)getTagByMonth:(NSString *)month
                     andYear:(NSString *)year;
 
-- (void)submitPost:(PhotoPost *)photoPost;
+- (void)submitPost:(PhotoPost *)photoPost
+         withImage:(UIImage *)image
+           success:(void (^)(NSString *postID))success
+           failure:(void (^)(NSError *error))failure;
 
 -(NSArray *)sortByDateForPhotoPosts:(NSArray *)photoPostsArray;
 @end
