@@ -88,17 +88,26 @@ describe(@"ResponseParser", ^{
             parsedUser.blogs.count should equal(2);
         });
         
-        context(@"primary blog", ^{
+        context(@"first blog", ^{
+            __block Blog *firstBlog;
+            
+            beforeEach(^{
+                firstBlog = parsedUser.blogs[0];
+            });
             it(@"has the correct name", ^{
-                parsedUser.primaryBlog.name should equal(@"derekg");
+                firstBlog.name should equal(@"derekg");
             });
             
             it(@"has the correct title", ^{
-                parsedUser.primaryBlog.title should equal(@"Derek Gottfrid");
+                firstBlog.title should equal(@"Derek Gottfrid");
             });
             
             it(@"has the correct url", ^{
-                parsedUser.primaryBlog.url should equal(@"http://derekg.org/");
+                firstBlog.url should equal(@"http://derekg.org/");
+            });
+            
+            it(@"has the correct hostname", ^{
+                 firstBlog.hostname should equal(@"derekg.org/");
             });
         });
     });

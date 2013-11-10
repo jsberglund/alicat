@@ -8,16 +8,17 @@
 
 #import "ViewController.h"
 #import "AuthenticationManager.h"
-#import "SecretConstants.h"
 #import "PostManager.h"
 #import "TMAPIClient.h"
+#import "CalendarViewController.h"
+#import "AppDelegate.h"
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-@property (strong, nonatomic) AuthenticationManager *authManager;
-@property (strong, nonatomic) PostManager *postManager;
+@property (strong, nonatomic) AuthenticationManager *authManager; //delegate owns?
+@property (strong, nonatomic) PostManager *postManager; //delegate owns?
 
 @property BOOL newMedia;
 
@@ -25,23 +26,74 @@
 @property (nonatomic) NSMutableArray *capturedImages;
 @property (nonatomic) UIImage *selectedImage;
 
+//@property (strong, nonatomic) UserInfo *currentUser; //needs to be in delegate?
+
 
 
 @end
 
-@implementation ViewController 
+@implementation ViewController
+//@synthesize currentUser;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [TMAPIClient sharedInstance].OAuthConsumerKey = kTumblrConsumerKey;
-    [TMAPIClient sharedInstance].OAuthConsumerSecret = kTumblrConsumerSecret;
 	self.authManager = [[AuthenticationManager alloc] init];
     self.postManager = [[PostManager alloc] init];
-    
     self.capturedImages = [[NSMutableArray alloc] init];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    //where to remove this observer?
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToCalendarController:) name:@"loginDismissed" object:nil];
+    
+    
+    if (![self.authManager isUserLoggedIn]) {
+        [self  performSegueWithIdentifier:@"LoginViewControllerSegue" sender:self];
+    }
+    else
+    {
+        [self.authManager getCurrentUserInfoWithSuccess:^(UserInfo *user) {
+            self.currentUser = user;
+            //perform segue to calcontroller
+            [self pushToCalendarController:nil];
+        } andFailure:^(NSError *error) {
+            NSLog(@"================> %@", @"ERROR GETTING USER, login again");
+            [self  performSegueWithIdentifier:@"LoginViewControllerSegue" sender:self];
+        }];
+    }
+}
+
+- (void)pushToCalendarController:(NSNotification *)notis
+{
+    //[self  performSegueWithIdentifier:@"CalendarControllerSegue" sender:self];
+}
+
+-(void)setCurrentUser:(UserInfo *)currentUser
+{
+    ((AppDelegate *)[UIApplication
+                     sharedApplication].delegate).currentUser = currentUser;
+}
+
+-(UserInfo *)currentUser
+{
+    return ((AppDelegate *)[UIApplication
+                            sharedApplication].delegate).currentUser;
+}
+
+//- (void)prepareForSegue:(UIStoryboardSegue*)segue
+//{
+//    if([segue.identifier isEqualToString:@"CalendarViewControllerSegue"])
+//    {
+//        CalendarViewController *controller = segue.destinationViewController;
+//        
+//        controller.currentUser = self.currentUser;
+//    }
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -51,16 +103,16 @@
 
 - (IBAction)authenticateButtonTapped:(UIButton *)sender
 {
-    [self.authManager AuthenticateUserWithCompletion:^(BOOL success){
-        NSLog(@"call back success");
-        self.statusLabel.text = @"User is authenticated!";
-        
-        [self.authManager getCurrentUserInfoWithSuccess:^(UserInfo *user) {
-            NSLog(@"Success user");
-        } andFailure:^(NSError *error) {
-             NSLog(@"fail user");
-        }];
-    }];
+//    [self.authManager AuthenticateUserWithCompletion:^(BOOL success){
+//        NSLog(@"call back success");
+//        self.statusLabel.text = @"User is authenticated!";
+//        
+//        [self.authManager getCurrentUserInfoWithSuccess:^(UserInfo *user) {
+//            NSLog(@"Success user");
+//        } andFailure:^(NSError *error) {
+//             NSLog(@"fail user");
+//        }];
+//    }];
 }
 
 - (IBAction)getPostsButtonTapped:(UIButton *)sender

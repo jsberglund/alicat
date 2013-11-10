@@ -15,4 +15,5 @@
 - (void)logOutUser;
 
 - (void)getCurrentUserInfoWithSuccess:(void (^)(UserInfo *user))success andFailure:(void (^)(NSError *error))failure;
+- (BOOL)isUserLoggedIn;
 @end

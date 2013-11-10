@@ -14,15 +14,17 @@
 
 @interface PostManager ()
 @property (strong, nonatomic) ResponseParser *tumblrParser;
+@property (strong, nonatomic) NSString *hostname;
 @end
 
 @implementation PostManager
 
-- (id)init
+- (id)initWithHostname:(NSString *)hostname
 {
     self = [super init];
     if (self) {
         self.tumblrParser = [[ResponseParser alloc] init];
+        self.hostname = hostname;
     }
     return self;
 }
@@ -35,8 +37,7 @@
    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDictionary *params = @{@"tag" : [self getTagByMonth:month andYear:year], @"format" : @"text"};
         
-       //TODO get user blog name after authenticating
-       [[TMAPIClient sharedInstance] posts:@"creativ365.tumblr.com" type:@"photo" parameters:params callback:^(id postsData, NSError *error) {
+       [[TMAPIClient sharedInstance] posts:self.hostname type:@"photo" parameters:params callback:^(id postsData, NSError *error) {
             
             if (!error) {
                 NSLog(@"callback succeeded. Posts: %@", postsData);
@@ -55,7 +56,7 @@
         } ];
     });   
 }
-
+//TODO add month tags
 - (void)submitPost:(PhotoPost *)photoPost
          withImage:(UIImage *)image
            success:(void (^)(NSString *postID))success
@@ -72,7 +73,7 @@
         // Create file manager
         NSFileManager *fileMgr = [NSFileManager defaultManager];
         
-        [[TMAPIClient sharedInstance] photo:@"creativ365.tumblr.com"
+        [[TMAPIClient sharedInstance] photo:self.hostname
                               filePathArray:@[path]
                            contentTypeArray:@[@"image/jpg"]
                               fileNameArray:@[@"upload-image.jpg"]
@@ -91,19 +92,6 @@
                                    }];
         
     });
-    
-//    UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
-//    //you can use UIImagePickerControllerOriginalImage for the original image
-//    
-//    //Now, save the image to your apps temp folder,
-//    
-//    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"upload-image.tmp"];
-//    NSData *imageData = UIImagePNGRepresentation(img);
-//    //you can also use UIImageJPEGRepresentation(img,1); for jpegs
-//    [imageData writeToFile:path atomically:YES];
-//    
-//    //now call your method
-//    [someClass uploadMyImageToTheWebFromPath:path];
 }
 
 -(NSArray *)sortByDateForPhotoPosts:(NSArray *)photoPostsArray

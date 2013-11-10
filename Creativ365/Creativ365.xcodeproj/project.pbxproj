@@ -22,6 +22,8 @@
 		64213C3317C71BF100ACB862 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3217C71BF100ACB862 /* ViewController.m */; };
 		64213C3B17C725AE00ACB862 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3A17C725AE00ACB862 /* AuthenticationManager.m */; };
 		64213C3E17C72F9C00ACB862 /* PostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3D17C72F9C00ACB862 /* PostManager.m */; };
+		647021A8182E1CCB006552CD /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647021A7182E1CCB006552CD /* CalendarViewController.m */; };
+		647021A9182E1CCB006552CD /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647021A7182E1CCB006552CD /* CalendarViewController.m */; };
 		64AF41CD17C80E7200B856FB /* PhotoPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41CC17C80E7200B856FB /* PhotoPost.m */; };
 		64AF41D717C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
 		64AF41D817C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
@@ -40,6 +42,9 @@
 		64F49CBF17D2F48E0034F404 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CBE17D2F48E0034F404 /* Blog.m */; };
 		64F49CC017D2F48E0034F404 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CBE17D2F48E0034F404 /* Blog.m */; };
 		64F49CC317D3BE3F0034F404 /* JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CC217D3BE3F0034F404 /* JSONFixture.m */; };
+		64F49CC417D4456C0034F404 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3217C71BF100ACB862 /* ViewController.m */; };
+		64F49CC717D4543A0034F404 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CC617D4543A0034F404 /* LoginViewController.m */; };
+		64F49CC817D4543A0034F404 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CC617D4543A0034F404 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +71,8 @@
 		64213C3C17C72F9C00ACB862 /* PostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManager.h; sourceTree = "<group>"; };
 		64213C3D17C72F9C00ACB862 /* PostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManager.m; sourceTree = "<group>"; };
 		64213C3F17C73E8700ACB862 /* SecretConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretConstants.h; sourceTree = "<group>"; };
+		647021A6182E1CCB006552CD /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		647021A7182E1CCB006552CD /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		64AF41CB17C80E7200B856FB /* PhotoPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoPost.h; path = Model/PhotoPost.h; sourceTree = "<group>"; };
 		64AF41CC17C80E7200B856FB /* PhotoPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoPost.m; path = Model/PhotoPost.m; sourceTree = "<group>"; };
 		64AF41CF17C812C500B856FB /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
@@ -88,6 +95,8 @@
 		64F49CBE17D2F48E0034F404 /* Blog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blog.m; sourceTree = "<group>"; };
 		64F49CC117D3BE3F0034F404 /* JSONFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONFixture.h; sourceTree = "<group>"; };
 		64F49CC217D3BE3F0034F404 /* JSONFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONFixture.m; sourceTree = "<group>"; };
+		64F49CC517D4543A0034F404 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = View/LoginViewController.h; sourceTree = "<group>"; };
+		64F49CC617D4543A0034F404 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = View/LoginViewController.m; sourceTree = "<group>"; };
 		B42F1FC850914D93B7A0BDEF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -160,14 +169,13 @@
 				64213C2317C71BF100ACB862 /* AppDelegate.m */,
 				64213C2B17C71BF100ACB862 /* MainStoryboard_iPhone.storyboard */,
 				64213C2E17C71BF100ACB862 /* MainStoryboard_iPad.storyboard */,
-				64213C3117C71BF100ACB862 /* ViewController.h */,
-				64213C3217C71BF100ACB862 /* ViewController.m */,
 				64213C1A17C71BF100ACB862 /* Supporting Files */,
 				64213C3917C725AE00ACB862 /* AuthenticationManager.h */,
 				64213C3A17C725AE00ACB862 /* AuthenticationManager.m */,
 				64213C3C17C72F9C00ACB862 /* PostManager.h */,
 				64213C3D17C72F9C00ACB862 /* PostManager.m */,
 				64AF41CE17C80E7600B856FB /* Model */,
+				64F49CC917D454400034F404 /* View */,
 			);
 			path = Creativ365;
 			sourceTree = "<group>";
@@ -240,6 +248,19 @@
 				64C09A6817C7DB0F00D8377C /* Specs-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64F49CC917D454400034F404 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64213C3117C71BF100ACB862 /* ViewController.h */,
+				64213C3217C71BF100ACB862 /* ViewController.m */,
+				64F49CC517D4543A0034F404 /* LoginViewController.h */,
+				64F49CC617D4543A0034F404 /* LoginViewController.m */,
+				647021A6182E1CCB006552CD /* CalendarViewController.h */,
+				647021A7182E1CCB006552CD /* CalendarViewController.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +415,8 @@
 				64AF41D717C813D300B856FB /* ResponseParser.m in Sources */,
 				64F49CBB17D2F21F0034F404 /* UserInfo.m in Sources */,
 				64F49CBF17D2F48E0034F404 /* Blog.m in Sources */,
+				64F49CC717D4543A0034F404 /* LoginViewController.m in Sources */,
+				647021A8182E1CCB006552CD /* CalendarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +431,9 @@
 				64F49CBC17D2F21F0034F404 /* UserInfo.m in Sources */,
 				64F49CC017D2F48E0034F404 /* Blog.m in Sources */,
 				64F49CC317D3BE3F0034F404 /* JSONFixture.m in Sources */,
+				64F49CC417D4456C0034F404 /* ViewController.m in Sources */,
+				647021A9182E1CCB006552CD /* CalendarViewController.m in Sources */,
+				64F49CC817D4543A0034F404 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +500,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -499,7 +525,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

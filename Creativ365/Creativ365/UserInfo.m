@@ -7,9 +7,21 @@
 //
 
 #import "UserInfo.h"
-
+//#define USER_TOKEN_KEY @"UserToken"
 
 @implementation UserInfo
 
+
+
+//- (void)setToken:(NSString *)token
+//{
+//    [[NSUserDefaults standardUserDefaults] setObject:token forKey:USER_TOKEN_KEY];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+//}
+//
+//- (NSString *)token
+//{
+//    return [[NSUserDefaults standardUserDefaults] objectForKey:USER_TOKEN_KEY];
+//}
 
 @end

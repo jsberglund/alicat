@@ -81,12 +81,14 @@
                 blog.name = [blogs[i] objectForKey:@"name"];
                 blog.title = [blogs[i] objectForKey:@"title"];
                 blog.url = [blogs[i] objectForKey:@"url"];
-                
-                [blogsArray addObject:blog];
-                
+                blog.hostname = [self stripHTTPFromUrl:blog.url];
+
                 BOOL isPrimary = [[blogs[i] objectForKey:@"primary"] boolValue];
                 if (isPrimary) {
+                    [blogsArray insertObject:blog atIndex:0];
                     user.primaryBlog = blog;
+                } else {
+                    [blogsArray addObject:blog];
                 }
             }
             
@@ -95,6 +97,13 @@
     }
     
     return user;
+}
+
+-(NSString *)stripHTTPFromUrl:(NSString *)url
+{
+    NSString* stringWithoutHttp = [url stringByReplacingOccurrencesOfString:@"http://" withString:@""];
+    
+    return stringWithoutHttp;
 }
 
 @end

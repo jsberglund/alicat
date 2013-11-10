@@ -11,6 +11,8 @@
 #import "SecretConstants.h"
 #import "ResponseParser.h"
 
+#define TOKEN_KEY @"token"
+#define SECRET_KEY @"token_secret"
 
 @interface AuthenticationManager()
 @property (nonatomic, strong) NSString *storedOAuthToken;
@@ -31,10 +33,7 @@
 
 - (void)AuthenticateUserWithCompletion:(void (^)(BOOL success))onComplete
 {
-    _storedOAuthToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"token"];
-    _storedOAuthTokenSecret = [[NSUserDefaults standardUserDefaults] valueForKey:@"token_secret"];
-    
-    if (_storedOAuthToken.length == 0 || _storedOAuthToken == nil)
+    if (self.storedOAuthToken.length == 0 || self.storedOAuthToken == nil)
     {
         // Not Authenticated - so do authentication.
         
@@ -42,12 +41,12 @@
          {
              if (!error)
              {
-                 [[NSUserDefaults standardUserDefaults] setValue:[TMAPIClient sharedInstance].OAuthToken forKey:@"token"];
-                 [[NSUserDefaults standardUserDefaults] setValue:[TMAPIClient sharedInstance].OAuthTokenSecret forKey:@"token_secret"];
+                 self.storedOAuthToken = [TMAPIClient sharedInstance].OAuthToken;
+                 self.storedOAuthTokenSecret = [TMAPIClient sharedInstance].OAuthTokenSecret;
                  
                  onComplete(true);
              } else {
-                 onComplete(true);
+                 onComplete(false);
              }
          }];
     }
@@ -55,8 +54,8 @@
     {
         // Already authenticated
         
-        [TMAPIClient sharedInstance].OAuthToken = _storedOAuthToken;
-        [TMAPIClient sharedInstance].OAuthTokenSecret = _storedOAuthTokenSecret;
+        [TMAPIClient sharedInstance].OAuthToken = self.storedOAuthToken;
+        [TMAPIClient sharedInstance].OAuthTokenSecret = self.storedOAuthTokenSecret;
         
         onComplete(true);
     }
@@ -76,6 +75,36 @@
     }];
 }
 
+- (BOOL)isUserLoggedIn
+{
+    if (self.storedOAuthToken.length == 0 || self.storedOAuthToken == nil) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+- (void)setStoredOAuthToken:(NSString *)token
+{
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:TOKEN_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)storedOAuthToken
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:TOKEN_KEY];
+}
+
+- (void)setStoredOAuthTokenSecret:(NSString *)secret
+{
+    [[NSUserDefaults standardUserDefaults] setObject:secret forKey:SECRET_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)storedOAuthTokenSecret
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:SECRET_KEY];
+}
 
 -(void)logOutUser
 {
@@ -86,5 +115,20 @@
     [[NSUserDefaults standardUserDefaults] setValue:[TMAPIClient sharedInstance].OAuthToken forKey:@"token"];
     [[NSUserDefaults standardUserDefaults] setValue:[TMAPIClient sharedInstance].OAuthTokenSecret forKey:@"token_secret"];
 }
+//
+//+(void)saveCurrentUser:(TumblrUser *)object
+//{
+//    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+//    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:object];
+//    [prefs setObject:myEncodedObject forKey:kTumblrCurrentUserDefaultsKey];
+//}
+//
+//+(TumblrUser *)currentUser
+//{
+//    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+//    NSData *myEncodedObject = [prefs objectForKey:kTumblrCurrentUserDefaultsKey ];
+//    TumblrUser *obj = (TumblrUser *)[NSKeyedUnarchiver unarchiveObjectWithData: myEncodedObject];
+//    return obj;
+//}
 
 @end

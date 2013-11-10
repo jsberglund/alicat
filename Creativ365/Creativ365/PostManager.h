@@ -10,6 +10,9 @@
 #import "PhotoPost.h"
 
 @interface PostManager : NSObject
+
+- (id)initWithHostname:(NSString *)hostname;
+
 - (void)getPostsByMonth:(NSString *)month
                 andYear:(NSString *)year
                 success:(void (^)(NSArray *posts))success

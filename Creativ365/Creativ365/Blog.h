@@ -12,6 +12,7 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSString *hostname;
 
 
 @end
