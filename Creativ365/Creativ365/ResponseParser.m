@@ -103,6 +103,8 @@
 {
     NSString* stringWithoutHttp = [url stringByReplacingOccurrencesOfString:@"http://" withString:@""];
     
+    stringWithoutHttp = [stringWithoutHttp stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    
     return stringWithoutHttp;
 }
 

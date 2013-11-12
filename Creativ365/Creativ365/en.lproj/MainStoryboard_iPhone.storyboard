@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NYl-V4-eQk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
@@ -43,10 +43,14 @@
                             <constraint firstItem="TIm-40-H6y" firstAttribute="centerX" secondItem="Tsr-Ie-skg" secondAttribute="centerX" id="v70-ZO-upi"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xSz-VJ-U7c"/>
+                    <connections>
+                        <segue destination="qia-6U-a6n" kind="push" identifier="CalendarViewControllerSegue" id="jYy-pH-csP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Tw-Wu-Jfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343" y="360"/>
+            <point key="canvasLocation" x="799" y="-70"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="wAg-0w-rpU">
@@ -56,39 +60,65 @@
                         <viewControllerLayoutGuide type="top" id="5fI-qU-12t"/>
                         <viewControllerLayoutGuide type="bottom" id="JVn-tY-KJv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XZH-wM-uz6">
+                    <view key="view" contentMode="top" id="XZH-wM-uz6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Sn-wo-92j">
-                                <rect key="frame" x="0.0" y="89" width="320" height="301"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Sn-wo-92j">
+                                <rect key="frame" x="-5" y="122" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eH1-1i-2oI">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="WHS-rW-pCB">
+                                    <size key="itemSize" width="44" height="44"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NKR-cu-Mk7">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalPostCell" id="NKR-cu-Mk7" customClass="CalendarPostCell">
+                                        <rect key="frame" x="0.0" y="64" width="44" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emr-Dt-QSE" userLabel="dateLabel">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79t-NE-Alr" userLabel="imageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="emr-Dt-QSE" id="Xrs-AM-kTn"/>
+                                            <outlet property="imageView" destination="79t-NE-Alr" id="cGb-vF-Ejx"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="qia-6U-a6n" id="CA7-an-kb8"/>
+                                    <outlet property="delegate" destination="qia-6U-a6n" id="CH5-IU-MPb"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="s2N-Bu-j7Y"/>
+                    <connections>
+                        <outlet property="calendarCollectionView" destination="8Sn-wo-92j" id="JJs-X6-cBK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frT-gn-i2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845" y="-13"/>
+            <point key="canvasLocation" x="1371" y="-13"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5">
@@ -164,17 +194,34 @@
                             <constraint firstItem="qQ8-VD-Xk0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" id="gEb-Zy-y37"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gvg-JT-81c"/>
                     <connections>
                         <outlet property="authenticateButton" destination="TIm-40-H6y" id="VDs-G9-ICx"/>
                         <outlet property="imageView" destination="qQ8-VD-Xk0" id="PHh-ua-bb6"/>
                         <outlet property="statusLabel" destination="KOc-VR-WZR" id="rg3-8O-jye"/>
-                        <segue destination="IPC-sm-SDQ" kind="modal" identifier="LoginViewControllerSegue" id="1yO-RI-AYE"/>
-                        <segue destination="qia-6U-a6n" kind="push" identifier="CalendarControllerSegue" id="K5M-8L-yZW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-108" y="-18"/>
+            <point key="canvasLocation" x="380" y="332"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OPx-pM-Qnm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NYl-V4-eQk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sQ6-iL-faA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IPC-sm-SDQ" kind="relationship" relationship="rootViewController" id="7GS-RX-cTS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPB-ES-HU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-108" y="-96"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

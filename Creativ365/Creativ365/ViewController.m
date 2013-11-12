@@ -42,15 +42,15 @@
 	self.authManager = [[AuthenticationManager alloc] init];
     self.postManager = [[PostManager alloc] init];
     self.capturedImages = [[NSMutableArray alloc] init];
+    
+    //where to remove this observer?
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToCalendarController:) name:@"loginDismissed" object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    //where to remove this observer?
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToCalendarController:) name:@"loginDismissed" object:nil];
-    
+        
     
     if (![self.authManager isUserLoggedIn]) {
         [self  performSegueWithIdentifier:@"LoginViewControllerSegue" sender:self];
@@ -60,7 +60,8 @@
         [self.authManager getCurrentUserInfoWithSuccess:^(UserInfo *user) {
             self.currentUser = user;
             //perform segue to calcontroller
-            [self pushToCalendarController:nil];
+            NSLog(@"================> %@", @"blah");
+            //[self pushToCalendarController:nil];
         } andFailure:^(NSError *error) {
             NSLog(@"================> %@", @"ERROR GETTING USER, login again");
             [self  performSegueWithIdentifier:@"LoginViewControllerSegue" sender:self];
@@ -70,7 +71,7 @@
 
 - (void)pushToCalendarController:(NSNotification *)notis
 {
-    //[self  performSegueWithIdentifier:@"CalendarControllerSegue" sender:self];
+   // [self  performSegueWithIdentifier:@"CalendarControllerSegue" sender:self];
 }
 
 -(void)setCurrentUser:(UserInfo *)currentUser

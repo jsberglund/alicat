@@ -4,6 +4,7 @@
 //
 //  Created by Jessica Berglund on 8/22/13.
 //  Copyright (c) 2013 Jessica Berglund. All rights reserved.
+//  Should be renamed 'TumblrAuthenticationManager'.....
 //
 
 #import "AuthenticationManager.h"
@@ -17,7 +18,7 @@
 @interface AuthenticationManager()
 @property (nonatomic, strong) NSString *storedOAuthToken;
 @property (nonatomic, strong) NSString *storedOAuthTokenSecret;
-@property (strong, nonatomic) ResponseParser *tumblrParser;
+//@property (strong, nonatomic) ResponseParser *tumblrParser;
 @end
 
 @implementation AuthenticationManager
@@ -26,14 +27,14 @@
 {
     self = [super init];
     if (self) {
-        self.tumblrParser = [[ResponseParser alloc] init];
+        //self.tumblrParser = [[ResponseParser alloc] init];
     }
     return self;
 }
 
 - (void)AuthenticateUserWithCompletion:(void (^)(BOOL success))onComplete
 {
-    if (self.storedOAuthToken.length == 0 || self.storedOAuthToken == nil)
+    if (![self isUserLoggedIn])
     {
         // Not Authenticated - so do authentication.
         
@@ -63,10 +64,19 @@
 
 - (void)getCurrentUserInfoWithSuccess:(void (^)(UserInfo *user))success andFailure:(void (^)(NSError *error))failure
 {
+    if (![self isUserLoggedIn]) {
+        failure(nil);
+    } else {
+        // Already authenticated
+        [TMAPIClient sharedInstance].OAuthToken = self.storedOAuthToken;
+        [TMAPIClient sharedInstance].OAuthTokenSecret = self.storedOAuthTokenSecret;
+    }
+        
+    ResponseParser *tumblrParser = [[ResponseParser alloc] init];
     [[TMAPIClient sharedInstance] userInfo:^(id response, NSError *error) {
         if (!error)
         {
-            UserInfo *user = [self.tumblrParser parseIntoUserInfoWithJSONData:response];
+            UserInfo *user = [tumblrParser parseIntoUserInfoWithJSONData:response];
             
             success(user);
         } else {
@@ -112,8 +122,8 @@
     [TMAPIClient sharedInstance].OAuthToken = @"";
     [TMAPIClient sharedInstance].OAuthTokenSecret = @"";
     
-    [[NSUserDefaults standardUserDefaults] setValue:[TMAPIClient sharedInstance].OAuthToken forKey:@"token"];
-    [[NSUserDefaults standardUserDefaults] setValue:[TMAPIClient sharedInstance].OAuthTokenSecret forKey:@"token_secret"];
+    self.storedOAuthTokenSecret = @"";
+    self.storedOAuthToken = @"";
 }
 //
 //+(void)saveCurrentUser:(TumblrUser *)object

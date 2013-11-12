@@ -22,6 +22,8 @@
 		64213C3317C71BF100ACB862 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3217C71BF100ACB862 /* ViewController.m */; };
 		64213C3B17C725AE00ACB862 /* AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3A17C725AE00ACB862 /* AuthenticationManager.m */; };
 		64213C3E17C72F9C00ACB862 /* PostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3D17C72F9C00ACB862 /* PostManager.m */; };
+		6453ACD2182F60C500B9D0C7 /* CalendarPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453ACD1182F60C500B9D0C7 /* CalendarPostCell.m */; };
+		6453ACD3182F60C500B9D0C7 /* CalendarPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453ACD1182F60C500B9D0C7 /* CalendarPostCell.m */; };
 		647021A8182E1CCB006552CD /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647021A7182E1CCB006552CD /* CalendarViewController.m */; };
 		647021A9182E1CCB006552CD /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647021A7182E1CCB006552CD /* CalendarViewController.m */; };
 		64AF41CD17C80E7200B856FB /* PhotoPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41CC17C80E7200B856FB /* PhotoPost.m */; };
@@ -42,7 +44,6 @@
 		64F49CBF17D2F48E0034F404 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CBE17D2F48E0034F404 /* Blog.m */; };
 		64F49CC017D2F48E0034F404 /* Blog.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CBE17D2F48E0034F404 /* Blog.m */; };
 		64F49CC317D3BE3F0034F404 /* JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CC217D3BE3F0034F404 /* JSONFixture.m */; };
-		64F49CC417D4456C0034F404 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64213C3217C71BF100ACB862 /* ViewController.m */; };
 		64F49CC717D4543A0034F404 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CC617D4543A0034F404 /* LoginViewController.m */; };
 		64F49CC817D4543A0034F404 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CC617D4543A0034F404 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,8 @@
 		64213C3C17C72F9C00ACB862 /* PostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManager.h; sourceTree = "<group>"; };
 		64213C3D17C72F9C00ACB862 /* PostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManager.m; sourceTree = "<group>"; };
 		64213C3F17C73E8700ACB862 /* SecretConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretConstants.h; sourceTree = "<group>"; };
+		6453ACD0182F60C500B9D0C7 /* CalendarPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPostCell.h; sourceTree = "<group>"; };
+		6453ACD1182F60C500B9D0C7 /* CalendarPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPostCell.m; sourceTree = "<group>"; };
 		647021A6182E1CCB006552CD /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		647021A7182E1CCB006552CD /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		64AF41CB17C80E7200B856FB /* PhotoPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoPost.h; path = Model/PhotoPost.h; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 				64F49CC617D4543A0034F404 /* LoginViewController.m */,
 				647021A6182E1CCB006552CD /* CalendarViewController.h */,
 				647021A7182E1CCB006552CD /* CalendarViewController.m */,
+				6453ACD0182F60C500B9D0C7 /* CalendarPostCell.h */,
+				6453ACD1182F60C500B9D0C7 /* CalendarPostCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 				64213C3317C71BF100ACB862 /* ViewController.m in Sources */,
 				64213C3B17C725AE00ACB862 /* AuthenticationManager.m in Sources */,
 				64213C3E17C72F9C00ACB862 /* PostManager.m in Sources */,
+				6453ACD2182F60C500B9D0C7 /* CalendarPostCell.m in Sources */,
 				64AF41CD17C80E7200B856FB /* PhotoPost.m in Sources */,
 				64AF41D717C813D300B856FB /* ResponseParser.m in Sources */,
 				64F49CBB17D2F21F0034F404 /* UserInfo.m in Sources */,
@@ -429,9 +435,9 @@
 				64AF41DA17CABEE700B856FB /* PostManagerSpec.mm in Sources */,
 				64AF41DC17CAC2CF00B856FB /* ResponseParserSpec.mm in Sources */,
 				64F49CBC17D2F21F0034F404 /* UserInfo.m in Sources */,
+				6453ACD3182F60C500B9D0C7 /* CalendarPostCell.m in Sources */,
 				64F49CC017D2F48E0034F404 /* Blog.m in Sources */,
 				64F49CC317D3BE3F0034F404 /* JSONFixture.m in Sources */,
-				64F49CC417D4456C0034F404 /* ViewController.m in Sources */,
 				647021A9182E1CCB006552CD /* CalendarViewController.m in Sources */,
 				64F49CC817D4543A0034F404 /* LoginViewController.m in Sources */,
 			);

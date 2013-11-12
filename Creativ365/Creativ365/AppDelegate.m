@@ -18,6 +18,7 @@
     // Override point for customization after application launch.
     [TMAPIClient sharedInstance].OAuthConsumerKey = kTumblrConsumerKey;
     [TMAPIClient sharedInstance].OAuthConsumerSecret = kTumblrConsumerSecret;
+    self.authManager = [[AuthenticationManager alloc] init]; //tumblr for now, in future will be base class?
     return YES;
 }
 
