@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
   - JXHTTP (1.0.0)
   - MBProgressHUD (0.8)
+  - MNCalendarView (0.0.2)
   - NSData+Base64 (1.0.0)
   - TMTumblrSDK (1.0.4):
     - TMTumblrSDK/Activity
@@ -42,12 +43,18 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - MBProgressHUD (~> 0.5)
+  - MNCalendarView (from `/Users/jessicaberglund/development/jsbCalendarView`)
   - TMTumblrSDK (~> 1.0.0)
+
+EXTERNAL SOURCES:
+  MNCalendarView:
+    :path: /Users/jessicaberglund/development/jsbCalendarView
 
 SPEC CHECKSUMS:
   AFNetworking: 22de50ae71ab1c4859773f61068d6fcd1d8f9a4d
   JXHTTP: 04f027e55c252d206cf3fcc2a2bde3914a35d842
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+  MNCalendarView: 5f1247bf6d68fd63ec40e06c0ac5f64cbf9e4472
   NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28
   TMTumblrSDK: 1a175f7d6f9403874d86fac045c7b55fabb79389
 

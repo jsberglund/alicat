@@ -25,6 +25,9 @@
 @end
 
 @implementation CalendarViewController
+- (IBAction)calendarTestTapped:(id)sender {
+    [self  performSegueWithIdentifier:@"CalendarTestSegue" sender:self];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

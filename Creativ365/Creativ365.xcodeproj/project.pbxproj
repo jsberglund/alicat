@@ -26,6 +26,9 @@
 		6453ACD3182F60C500B9D0C7 /* CalendarPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453ACD1182F60C500B9D0C7 /* CalendarPostCell.m */; };
 		647021A8182E1CCB006552CD /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647021A7182E1CCB006552CD /* CalendarViewController.m */; };
 		647021A9182E1CCB006552CD /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647021A7182E1CCB006552CD /* CalendarViewController.m */; };
+		64881269183338F100803A73 /* CalendarTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64881268183338F100803A73 /* CalendarTestViewController.m */; };
+		64A762511838509700449653 /* CalendarScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A762501838509700449653 /* CalendarScrollViewController.m */; };
+		64A76254183851A500449653 /* CalendarMonthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A76253183851A500449653 /* CalendarMonthCell.m */; };
 		64AF41CD17C80E7200B856FB /* PhotoPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41CC17C80E7200B856FB /* PhotoPost.m */; };
 		64AF41D717C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
 		64AF41D817C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
@@ -76,6 +79,12 @@
 		6453ACD1182F60C500B9D0C7 /* CalendarPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPostCell.m; sourceTree = "<group>"; };
 		647021A6182E1CCB006552CD /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		647021A7182E1CCB006552CD /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		64881267183338F100803A73 /* CalendarTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTestViewController.h; sourceTree = "<group>"; };
+		64881268183338F100803A73 /* CalendarTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTestViewController.m; sourceTree = "<group>"; };
+		64A7624F1838509700449653 /* CalendarScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarScrollViewController.h; sourceTree = "<group>"; };
+		64A762501838509700449653 /* CalendarScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarScrollViewController.m; sourceTree = "<group>"; };
+		64A76252183851A500449653 /* CalendarMonthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarMonthCell.h; sourceTree = "<group>"; };
+		64A76253183851A500449653 /* CalendarMonthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarMonthCell.m; sourceTree = "<group>"; };
 		64AF41CB17C80E7200B856FB /* PhotoPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoPost.h; path = Model/PhotoPost.h; sourceTree = "<group>"; };
 		64AF41CC17C80E7200B856FB /* PhotoPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoPost.m; path = Model/PhotoPost.m; sourceTree = "<group>"; };
 		64AF41CF17C812C500B856FB /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
@@ -197,6 +206,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		64A76255183851AE00449653 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				64A76252183851A500449653 /* CalendarMonthCell.h */,
+				64A76253183851A500449653 /* CalendarMonthCell.m */,
+				6453ACD0182F60C500B9D0C7 /* CalendarPostCell.h */,
+				6453ACD1182F60C500B9D0C7 /* CalendarPostCell.m */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
+		64A7625818385B1C00449653 /* nibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = nibs;
+			sourceTree = "<group>";
+		};
 		64AF41CE17C80E7600B856FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,8 +289,12 @@
 				64F49CC617D4543A0034F404 /* LoginViewController.m */,
 				647021A6182E1CCB006552CD /* CalendarViewController.h */,
 				647021A7182E1CCB006552CD /* CalendarViewController.m */,
-				6453ACD0182F60C500B9D0C7 /* CalendarPostCell.h */,
-				6453ACD1182F60C500B9D0C7 /* CalendarPostCell.m */,
+				64A76255183851AE00449653 /* cells */,
+				64881267183338F100803A73 /* CalendarTestViewController.h */,
+				64881268183338F100803A73 /* CalendarTestViewController.m */,
+				64A7624F1838509700449653 /* CalendarScrollViewController.h */,
+				64A762501838509700449653 /* CalendarScrollViewController.m */,
+				64A7625818385B1C00449653 /* nibs */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -411,6 +442,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64881269183338F100803A73 /* CalendarTestViewController.m in Sources */,
+				64A76254183851A500449653 /* CalendarMonthCell.m in Sources */,
+				64A762511838509700449653 /* CalendarScrollViewController.m in Sources */,
 				64213C2017C71BF100ACB862 /* main.m in Sources */,
 				64213C2417C71BF100ACB862 /* AppDelegate.m in Sources */,
 				64213C3317C71BF100ACB862 /* ViewController.m in Sources */,
