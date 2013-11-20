@@ -107,7 +107,7 @@ describe(@"ResponseParser", ^{
             });
             
             it(@"has the correct hostname", ^{
-                 firstBlog.hostname should equal(@"derekg.org/");
+                 firstBlog.hostname should equal(@"derekg.org");
             });
         });
     });
