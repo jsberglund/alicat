@@ -77,7 +77,8 @@
                               filePathArray:@[path]
                            contentTypeArray:@[@"image/jpg"]
                               fileNameArray:@[@"upload-image.jpg"]
-                                 parameters:@{@"caption" : photoPost.title}
+                                 parameters:@{@"caption" : photoPost.title,
+                                              @"tags" : @"creativ365"}
                                    callback:^(id response, NSError *postError) {
                                        
                                        //delete temp file

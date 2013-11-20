@@ -210,7 +210,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="3lZ-WI-xgM">
-                                <rect key="frame" x="0.0" y="-55" width="340" height="535"/>
+                                <rect key="frame" x="0.0" y="-55" width="320" height="535"/>
                                 <color key="backgroundColor" red="0.89411771299999998" green="0.97254908080000002" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="srS-nL-7ny">
                                     <size key="itemSize" width="320" height="430"/>
@@ -227,18 +227,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="CrK-cD-hJd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="340" height="155"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tc3-A1-KEv" userLabel="Month Label">
-                                                    <rect key="frame" x="20" y="30" width="300" height="21"/>
+                                                    <rect key="frame" x="0.0" y="30" width="320" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" id="xwT-ch-Viw" userLabel="MonthView">
-                                                    <rect key="frame" x="0.0" y="82" width="340" height="300"/>
+                                                    <rect key="frame" x="0.0" y="82" width="320" height="300"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>

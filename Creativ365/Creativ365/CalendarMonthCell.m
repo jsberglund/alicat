@@ -72,6 +72,8 @@
     
 	NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:date];
 	NSInteger day = [components day];
+    NSInteger month = [components month];
+    NSInteger year = [components year];
 	if (day == 15) {
 		imageView.image = [UIImage imageNamed:@"blue"];
 	}else{

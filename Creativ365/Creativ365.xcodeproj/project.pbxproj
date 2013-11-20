@@ -32,14 +32,14 @@
 		64AF41CD17C80E7200B856FB /* PhotoPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41CC17C80E7200B856FB /* PhotoPost.m */; };
 		64AF41D717C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
 		64AF41D817C813D300B856FB /* ResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D617C813D300B856FB /* ResponseParser.m */; };
-		64AF41DA17CABEE700B856FB /* PostManagerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D917CABEE700B856FB /* PostManagerSpec.mm */; };
-		64AF41DC17CAC2CF00B856FB /* ResponseParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41DB17CAC2CF00B856FB /* ResponseParserSpec.mm */; };
+		64AF41DA17CABEE700B856FB /* PostManagerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41D917CABEE700B856FB /* PostManagerSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		64AF41DC17CAC2CF00B856FB /* ResponseParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64AF41DB17CAC2CF00B856FB /* ResponseParserSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		64C09A5917C7DB0E00D8377C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C09A5817C7DB0E00D8377C /* SenTestingKit.framework */; };
 		64C09A5A17C7DB0E00D8377C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1717C71BF100ACB862 /* CoreGraphics.framework */; };
 		64C09A5B17C7DB0E00D8377C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1317C71BF100ACB862 /* UIKit.framework */; };
 		64C09A5C17C7DB0E00D8377C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64213C1517C71BF100ACB862 /* Foundation.framework */; };
 		64C09A6217C7DB0E00D8377C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64C09A6017C7DB0E00D8377C /* InfoPlist.strings */; };
-		64C09A6417C7DB0E00D8377C /* ExampleSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64C09A6317C7DB0E00D8377C /* ExampleSpec.mm */; };
+		64C09A6417C7DB0E00D8377C /* ExampleSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64C09A6317C7DB0E00D8377C /* ExampleSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		64C09A6717C7DB0F00D8377C /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C09A6617C7DB0F00D8377C /* Cedar-iOS.framework */; };
 		64F49CB817D28EB70034F404 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F49CB717D28EB70034F404 /* blue.png */; };
 		64F49CBB17D2F21F0034F404 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F49CBA17D2F21F0034F404 /* UserInfo.m */; };
@@ -609,6 +609,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/Users/jessicaberglund/development/alicat/Pods/Headers/**",
+				);
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -633,6 +638,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/Users/jessicaberglund/development/alicat/Pods/Headers/**",
+				);
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",

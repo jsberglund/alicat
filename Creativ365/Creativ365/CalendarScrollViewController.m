@@ -112,13 +112,6 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (CalendarMonthCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
-//    CalendarMonthCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CELL" forIndexPath:indexPath];
-//    cell.monthTitle.text = @"November";
-//    [cell setUpViewWithStartDate:[NSDate date]  andEndDate:[NSDate date] ];
-//    return cell;
-
-    
-    
     static NSString *cellIdentifier = @"CELL";
     
     CalendarMonthCell *cell = (CalendarMonthCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
